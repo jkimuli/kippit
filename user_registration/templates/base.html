@@ -1,0 +1,85 @@
+<!doctype html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="description" content="">
+            <meta name="author" content="">
+            <title> Kippit | {%block title%}{%endblock%}</title>
+            <link rel="stylesheet" href="{{STATIC_URL}}bootstrap/css/bootstrap.css"/>
+            <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+            <style type="text/css">
+                body {
+                    padding-top: 20px;
+                    padding-bottom: 40px;
+                }
+                
+                /*custom container*/
+                
+                .container-narrow{
+                    margin: 0 auto;
+                    max-width:700px;
+                }
+                
+    /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+        
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+                
+                
+                
+            </style>
+            
+            {%block external %}{%endblock%}
+        </head>
+        
+        <body>
+            
+                      
+            <div class="container-narrow">
+                
+                <div class="masthead">
+                    <ul class="nav nav-pills pull-right">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/bookmarks/recent/">Discover</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">Signup</a></li>
+                    </ul>
+                    
+                    <h3 class="red">Kippit</h3>
+                </div>
+                
+                <hr/>
+                
+                
+                        
+                {%block content %} {%endblock %}
+                        
+                            
+                    
+                
+                
+                
+                <hr/>
+                
+                 <div class="footer">
+                    <p>Copyright &copy Julius Kimuli 2013. All Rights Reserved</p>
+                 </div>
+                 
+            </div>
+            
+            <script src="{{STATIC_URL}}/bootstrap/js/jquery.js"></script>
+            <script src="{{STATIC_URL}}/bootstrap/js/bootstrap.js"></script>
+            
+        </body>
+    </html>

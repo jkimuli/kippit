@@ -1,0 +1,26 @@
+{%extends "base.html"%}
+ {%block title%}Bookmarks{%endblock%}
+ 
+ {%block content%}
+   <div class="row">
+    
+    <div class="span12">
+        
+        {%if bookmarks%}
+          {%for bookmark in bookmarks%}
+          
+          <h4><a href="{{bookmark.link.url}}">{{bookmark.title}}</a></h4>
+          <p> added by <a href="/bookmarks/user/{{bookmark.user.username}}/"> {{bookmark.user.username}}</a> &nbsp; <a href="/comment">Comment</a> &nbsp; <a href="/bookmark/vote">Like</a></p>
+          <hr style="width:700px;"/>
+          
+          {%endfor%}
+          
+        {%else%}
+           <p style="color:red;"> No bookmarks posted yet!</p>
+           
+        {%endif%}
+          
+    </div>
+   </div>
+    
+  {%endblock%}

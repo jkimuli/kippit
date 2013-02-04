@@ -1,0 +1,27 @@
+{%extends "base.html"%}
+
+{%block title%} Bookmark - Save {%endblock%}
+
+{%block content%}
+  <div class="row">
+    <div class="span12">
+        
+        <form action="" method="post">
+            {%csrf_token%}
+            
+            {{form.title.errors}}
+            <label for="title">Title</label>
+            {{form.title}}
+            
+            {{form.link.errors}}
+            <label for="url"> URL</label>
+            {{form.link}}
+            
+            <input type="submit" value="Submit" />
+            
+        </form>
+        
+    </div>
+  </div>
+  
+{%endblock%}
