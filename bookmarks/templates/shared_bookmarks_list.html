@@ -1,27 +1,9 @@
-{% extends "base.html"%}
-
-{%block title%} Home {%endblock%}
-
-{%block content%}
-  <div class="jumbtron">
-    
-    <p class="lead"> The best place for your links, discover the web with us!</p>
-    
-    <a class="btn btn-large btn-success" href="/signup">Sign up today</a>
-  </div>
-  
-  <hr/>
-  
-  <div class="row">
-    <div class="span12">
-        <p class="lead">Check out what others are discovering with Kippit</p>
-        
-        {%if shared_bookmarks %}
+{%if shared_bookmarks %}
           {%for shared_bookmark in shared_bookmarks%}
           
           <p><h4><a href="{{shared_bookmark.bookmark.link.url}}">{{shared_bookmark.bookmark.title}}</a> 
               
-          </h4> &nbsp;&nbsp;&nbsp; <img width="40" height="40" src="{{STATIC_URL}}img/like_1.jpg">{{shared_bookmark.votes}} people like this
+          </h4> &nbsp;&nbsp;&nbsp; {{shared_bookmark.votes}} people like this
           
           </p>
           
@@ -43,13 +25,4 @@
         {%else%}
            <p style="color:red;"> No bookmarks posted yet!</p>
            
-        {%endif%}
-          
-        
-        <p style="text-align:center;"> <a href="/bookmarks/popular/">Popular</a> | 
-        <a href="/bookmarks/recent/">Recent</a></p>
-        
-    </div>
-  </div>
-  
-{%endblock%}
+{%endif%}

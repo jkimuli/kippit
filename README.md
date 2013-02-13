@@ -1,4 +1,4 @@
 kippit
 ======
 
-My Django-based bookmarks sharing web app
+My Django-based bookmarks sharing web application

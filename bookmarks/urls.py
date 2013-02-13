@@ -7,6 +7,8 @@ urlpatterns = patterns('bookmarks.views',
         url(r'^popular/$','popular_page'),
         url(r'^user/(?P<username>\w+)/$','user_page'),
         url(r'^save/$','bookmark_save'),
+        url(r'^tags/(?P<tag_name>\w+)/$','tag_page'),
+        url(r'^vote/$','bookmark_vote_page'),
         
         
       )

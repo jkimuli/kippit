@@ -20,7 +20,7 @@ def register_page(request):
                 email = form.cleaned_data['email']
             )
             
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/signup/success')
     else:
         form = RegistrationForm()
         

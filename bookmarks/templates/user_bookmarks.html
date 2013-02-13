@@ -10,7 +10,15 @@
           {%for bookmark in bookmarks%}
           
           <h4><a href="{{bookmark.link.url}}">{{bookmark.title}}</a></h4>
-          <p> added by {{username}} &nbsp; <a href="/comment/">Comment</a> &nbsp; <a href="/bookmark/vote/">Like</a></p>
+          <p> added by {{username}} &nbsp; </p>
+          
+        {%if bookmark.tag_set.all%}
+          <p> Tags: {%for tag in bookmark.tag_set.all%}
+              <a href="/bookmarks/tags/{{tag.name}}/">{{tag.name}}</a> &nbsp;&nbsp
+              {%endfor%}
+          </p>
+         {%endif%}
+         
           <hr style="width:700px;"/>
           
           {%endfor%}

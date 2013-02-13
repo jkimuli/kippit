@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.generic.simple import direct_to_template
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -20,11 +21,17 @@ urlpatterns = patterns('',
      
      url(r'^bookmarks/',include('bookmarks.urls')),
      
-     url(r'^login/$','django.contrib.auth.views.login'),
+     url(r'^accounts/login/$','django.contrib.auth.views.login'),
      
      url(r'^logout/$','django.contrib.auth.views.logout',{'next_page': '/'}),
      
      url(r'^signup/$','user_registration.views.register_page'),
+     
+     url(r'^signup/success/$',direct_to_template,{'template':'sign_up_success.html'}),
+     
+     #urls for comments application
+     
+     url(r'^comments/',include('django.contrib.comments.urls')),
 )
 
 urlpatterns += staticfiles_urlpatterns()

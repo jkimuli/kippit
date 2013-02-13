@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'bookmarks',
     'user_registration',
+    'django.contrib.comments',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (

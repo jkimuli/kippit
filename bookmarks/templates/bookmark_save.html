@@ -9,13 +9,23 @@
         <form action="" method="post">
             {%csrf_token%}
             
+            {{form.link.errors}}
+            <label for="url"> URL</label>
+            {{form.url}}
+            
             {{form.title.errors}}
             <label for="title">Title</label>
             {{form.title}}
             
-            {{form.link.errors}}
-            <label for="url"> URL</label>
-            {{form.link}}
+            {{form.tags.errors}}
+            <label for="tags">Tags</label>
+            {{form.tags}}
+            
+            {{form.share.errors}}
+            <label for="share">Share on main page</label>
+            {{form.share}}
+            
+            
             
             <input type="submit" value="Submit" />
             
