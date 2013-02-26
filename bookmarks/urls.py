@@ -9,6 +9,8 @@ urlpatterns = patterns('bookmarks.views',
         url(r'^save/$','bookmark_save'),
         url(r'^tags/(?P<tag_name>\w+)/$','tag_page'),
         url(r'^vote/$','bookmark_vote_page'),
+        url(r'^(?P<id>\d+)/$','bookmark_page'),
+        
         
         
       )

@@ -3,11 +3,11 @@
           
           <p><h4><a href="{{shared_bookmark.bookmark.link.url}}">{{shared_bookmark.bookmark.title}}</a> 
               
-          </h4> &nbsp;&nbsp;&nbsp; {{shared_bookmark.votes}} people like this
+          </h4> &nbsp;&nbsp;&nbsp; <img width="40" height="40" src="{{STATIC_URL}}img/like_1.jpg">{{shared_bookmark.votes}} people like this
           
           </p>
           
-          <p> added by <a href="/bookmarks/user/{{shared_bookmark.bookmark.user.username}}/"> {{shared_bookmark.bookmark.user.username}}</a> &nbsp; <a href="/comment">Comment</a> &nbsp; <a href="/bookmarks/vote/?id={{shared_bookmark.id}}">Like</a>
+          <p> added by <a href="/bookmarks/user/{{shared_bookmark.bookmark.user.username}}/"> {{shared_bookmark.bookmark.user.username}}</a> &nbsp; <a href="/bookmarks/{{shared_bookmark.id}}/">Comment</a> &nbsp; <a href="/bookmarks/vote/?id={{shared_bookmark.id}}">Like</a>
           
           &nbsp; &nbsp; &nbsp;
           

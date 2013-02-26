@@ -26,10 +26,17 @@ def popular_page(request):
     #returning popular bookmarks over the last one week
     
     today = datetime.today()
+    
+    
     last_week = today - timedelta(7)
     
     shared_bookmarks = SharedBookmark.objects.filter(date__gt=last_week)
+        
     shared_bookmarks = shared_bookmarks.order_by('-votes')[:20]
+    
+    if shared_bookmarks.count() == 0:
+		last_month = today - timedelta(30)
+		shared_bookmarks = SharedBookmark.objects.filter(date__gt=last_month).order_by('-votes')[:20]
     
     variables = RequestContext(request,
             {'shared_bookmarks': shared_bookmarks }
@@ -58,11 +65,22 @@ def user_page(request,username):
     
     bookmarks = user.bookmark_set.all().order_by('-id')[:20]
     
+    
+    
     variables = RequestContext(request,
         {'username':username,
-         'bookmarks':bookmarks})
+         'bookmarks':bookmarks,
+         })
     
     return render_to_response('user_bookmarks.html',variables)
+    
+def bookmark_page(request,id):
+	bookmark = get_object_or_404(SharedBookmark,id=id)
+	
+	variables = RequestContext(request,
+	  {'shared_bookmark':bookmark})
+	  
+	return render_to_response('bookmark_page.html',variables)
 
 @login_required
 def bookmark_save(request):
