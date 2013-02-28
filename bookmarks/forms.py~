@@ -3,16 +3,16 @@ from django import forms
 
 class BookmarkForm(forms.Form):
     url = forms.URLField(
-        widget=forms.TextInput(attrs={'size':64,'placeholder': 'URL'})
+        widget=forms.TextInput(attrs={'size':64})
     )
     
     title = forms.CharField(
-        widget = forms.TextInput(attrs={'size':64,'placeholder':'Title'})
+        widget = forms.TextInput(attrs={'size':64})
     )
         
     tags = forms.CharField(
         required = False,
-        widget = forms.TextInput(attrs={'size':64,'placeholder':'Tags'})
+        widget = forms.TextInput(attrs={'size':64})
     )
     
     share = forms.BooleanField(
